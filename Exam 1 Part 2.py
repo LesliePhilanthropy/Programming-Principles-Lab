@@ -1,0 +1,37 @@
+#Program Name: Exam1.py
+#Course: IT1114/Section 81538
+#Student Name: Leslie Lawrence
+#Assignment Number: Exam 1
+#Due Date: 10/3/2026
+#Purpose: Calculate Taxes
+#PyCharm, YouTube
+
+# What is the amount of total income
+income = float(input("What was your total income for this tax year?: "))
+
+# What is the base income tax
+if income < 10000:
+    tax = income * 0.023
+elif income <= 50000:
+    tax = income * 0.045
+else:
+    tax = income * 0.061
+
+# What is the persons marital status
+married = input("Are you married? [y/n]: ").strip().lower()
+if married == 'y':
+    years_married = float(input("How long have you been married?: "))
+    tax -= 1.62 * years_married
+
+# Accept current elevation
+elevation = input("Is the elevation of your home address below-1, at-2, above-3 sea level? [1/2/3]: ").strip()
+
+if elevation == '1':
+    tax += 18.32
+elif elevation == '2':
+    tax += income * 0.016
+elif elevation == '3':
+    bedrooms = float(input("How many bedrooms are in your house?: "))
+    tax += 5.00 * bedrooms
+
+print(f"The total tax for {income} is: {tax}")
