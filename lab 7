@@ -1,0 +1,29 @@
+#Program Name: Lab7.py
+#Course: IT1114/Section 81538
+#Student Name: Leslie Lawrence
+#Assignment Number: 7
+#Due Date: 10/25/2026
+#Purpose: Print all prime numbers between a given range of numbers, one per line
+#PyCharm, YouTube
+
+# Is the number prime?
+def is_prime(number):
+    if number == 1:
+        return True
+    elif number < 1:
+        return False
+
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+
+    return True
+
+# Start and ending numbers
+start = int(input("Starting Number: "))
+end = int(input("Ending Number: "))
+
+# Display the prime numbers
+for number in range(start, end + 1):
+    if is_prime(number):
+        print(number)
