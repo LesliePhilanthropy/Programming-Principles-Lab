@@ -1,0 +1,81 @@
+# Program Name: Lab6.py
+# Course: IT 1114/ Section 81538
+# Student: Leslie Lawrence
+# Assignment Number: 6
+# Due Date: 10/18/2026
+# Purpose: Calculate the cost of a vacation
+# Resources Used: Python, Youtube
+
+# Calculate the room cost
+def roomcost(nights, roomtype):
+    if roomtype == 1:
+        cost = 375
+    elif roomtype == 2:
+        cost = 350
+    elif roomtype == 3:
+        cost = 525
+    else:
+        cost = 475
+
+    return nights * cost
+
+# Calculate the meal cost plus 15%
+def mealcost(brunches, dinners):
+    brunchcost = brunches * 25
+    dinnercost = dinners * 75
+    totalmeals = brunchcost + dinnercost
+    gratuity = totalmeals * 0.15
+
+    return totalmeals + gratuity
+
+# Calculate the chose excursions
+def excursioncost(picnic, snorkeling, guidedhike, boatdinner):
+    cost = 0
+
+    if picnic:
+        cost += 50
+
+    if snorkeling:
+        cost += 25
+
+    if guidedhike:
+        cost += 17
+
+    if boatdinner:
+        cost += 200
+
+    return cost
+
+# Get the number of nights
+nights = int(input("Number of nights: "))
+
+# Display room options
+print("Room Types:")
+print("1 - Two Queen Beds")
+print("2 - One King Bed")
+print("3 - Queen Suite")
+print("4 - King Suite")
+
+roomtype = int(input("Select Type: "))
+
+# Number of meals
+brunches = int(input("How many brunches: "))
+dinners = int(input("How many dinners: "))
+
+# Excursions
+picnic = input("Picnic?: ").lower() == "y"
+snorkeling = input("Snorkeling?: ").lower() == "y"
+guidedhike = input("Guided Hike?: ").lower() == "y"
+boatdinner = input("Boat Dinner?: ").lower() == "y"
+
+# Calculate total costs
+room = roomcost(nights, roomtype)
+meals = mealcost(brunches, dinners)
+excursions = excursioncost(picnic, snorkeling, guidedhike, boatdinner)
+total = room + meals + excursions
+
+# Display the results
+print("Room Cost:", room)
+print("Meal Cost:", meals)
+print("Excursion Cost:", excursions)
+print("Total Cost:", total)
