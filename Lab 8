@@ -1,0 +1,55 @@
+#Program Name: Lab8.py
+#Course: IT1114/Section 81538
+#Student Name: Leslie Lawrence
+#Assignment Number: 8
+#Due Date: 11/01/2026
+#Purpose: Capture office worker data
+#PyCharm, YouTube
+class Worker:
+    def __init__(self):
+        self._employee_number = None
+        self._office_number = None
+        self._name = None
+        self._birthdate = None
+        self._hours_worked = 0
+        self._hours_overtime = 0
+
+    def get_employee_number(self):
+        return self._employee_number
+
+    def set_employee_number(self, x):
+        self._employee_number = x
+
+    def get_office_number(self):
+        return self._office_number
+
+    def set_office_number(self, x):
+        if x < 100 or x > 500:
+            return False
+        self._office_number = x
+        return True
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, FirstName):
+        self._name = FirstName
+
+    def set_birthdate(self, d, m, y):
+        if 1 <= m <= 12 and 1 <= d <= 31:
+            self._birthdate = (d, m, y)
+            return True
+        return False
+
+    def add_hours(self, x):
+        if x > 9:
+            self._hours_worked += 9
+            self._hours_overtime += (x - 9)
+        else:
+            self._hours_worked += x
+
+    def get_hours_worked(self):
+        return self._hours_worked
+
+    def get_hours_overtime(self):
+        return self._hours_overtime
