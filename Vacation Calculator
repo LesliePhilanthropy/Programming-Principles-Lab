@@ -1,11 +1,3 @@
-# Program Name: Lab6.py
-# Course: IT 1114/ Section 81538
-# Student: Leslie Lawrence
-# Assignment Number: 6
-# Due Date: 10/18/2026
-# Purpose: Calculate the cost of a vacation
-# Resources Used: Python, Youtube
-
 # Calculate the room cost
 def roomcost(nights, roomtype):
     if roomtype == 1:
