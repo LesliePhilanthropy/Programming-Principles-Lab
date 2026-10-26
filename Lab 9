@@ -1,0 +1,36 @@
+
+# Program Name: Lab9.py
+# Course: IT1114 / Section 81538
+# Student Name: Leslie Lawrence
+# Assignment Number: 9
+#Due Date: November 15, 2026
+# Purpose: Combine two arrays and remove duplicates
+# Resources Used: Python, Youtube
+
+import random
+
+# Prompt the user for N
+N = int(input("N: "))
+
+# Create two arrays with N random numbers
+array1 = []
+array2 = []
+
+for i in range(N):
+    array1.append(random.randint(0, 500))
+    array2.append(random.randint(0, 500))
+
+# Combine both arrays without duplicates
+final_array = []
+
+for number in array1:
+    if number not in final_array:
+        final_array.append(number)
+
+for number in array2:
+    if number not in final_array:
+        final_array.append(number)
+
+# Display the final array, one number per line
+for number in final_array:
+    print(number)
